@@ -89,22 +89,22 @@
 
     ### Used end-points
         
-    Initial call Development:
+    Initial call Development environment:
     * [http://localhost:3020/api/v1/sub-categories/119931](http://142.93.115.215:3020/api/v1/sub-categories/119931)
 
-    Initial call Production:
+    Initial call Production environment:
     * [http://142.93.115.215:3020/api/v1/sub-categories/119931](http://142.93.115.215:3020/api/v1/sub-categories/119931)
 
     *****************************************************************
     
-    Sort By Developement:
+    Sort By Developement environment:
     * [http://localhost:3020/api/v1/sub-categories/119931/newest](http://142.93.115.215:3020/api/v1/sub-categories/119931/newest)
 
     * [http://localhost:3020/api/v1/sub-categories/119931/asc](http://142.93.115.215:3020/api/v1/sub-categories/119931/asc)
 
     * [http://localhost:3020/api/v1/sub-categories/119931/popular](http://142.93.115.215:3020/api/v1/sub-categories/119931/popular)
 
-    Sort By Production:
+    Sort By Production environment:
     * [http://142.93.115.215:3020/api/v1/sub-categories/119931/newest](http://142.93.115.215:3020/api/v1/sub-categories/119931/newest)
 
     * [http://142.93.115.215:3020/api/v1/sub-categories/119931/asc](http://142.93.115.215:3020/api/v1/sub-categories/119931/asc)
