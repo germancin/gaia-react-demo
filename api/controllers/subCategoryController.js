@@ -54,3 +54,5 @@ const splitData = async (data) => {
 		moreTiles,
 	}
 }
+
+module.exports = {getData};
