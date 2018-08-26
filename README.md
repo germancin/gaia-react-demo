@@ -48,7 +48,7 @@
 
     To build the app the ``REACT_APP_STAGE`` is set as `dev` and `production` according to the environments.
 
-    The ``npm run build deploy:prod`` command is executed for production build and it will get the production configurations from the [config.js](https://github.com/germancin/gaia-react-demo/blob/master/app/src/config.js) file. Also this will bundle the scss files. 
+    The ``npm run build deploy:prod`` command from [package.json](https://github.com/germancin/gaia-react-demo/blob/master/app/package.json#L25) is executed for production build and it will get the production configurations from the [config.js](https://github.com/germancin/gaia-react-demo/blob/master/app/src/config.js) file. Also this will bundle the scss files. 
 
     All the configurations are placed in the [config.js](https://github.com/germancin/gaia-react-demo/blob/master/app/src/config.js) file.
 
