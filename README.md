@@ -38,7 +38,7 @@
 
         * Once the `api/v1/sub-categories/:tid` resolve the request, uses the `spliData()` method which map the response into a consumable object to be used for the React app. [code](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L36)
 
-        * Once `api/v1/sub-categories/:tid/:sortby` resolve the request, uses the `sortData()` method which sort the data base on the pparam `sortby` then map the response into a consumable object to be used for the React app. [code](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js)
+        * Once `api/v1/sub-categories/:tid/:sortby` resolve the request, uses the `getSortedData()` method which sort the data according to the `sortby` param then maps the response into a consumable object to be used for the React app. [code](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L34)
 
 		* These 2 end-points ping : [https://d6api.gaia.com/videos/term/119931](https://d6api.gaia.com/videos/term/119931)
     * The API was versioned following REST API good practices `/api/v1`.
@@ -66,6 +66,8 @@
     ```
     * The amount of elements shown in the UI are set up with the variable `CHUNK_SIZE` found it on the `.env` file.
 
+    * **Production server**: [Pm2](https://www.npmjs.com/package/pm2) is use to keep the application alive. PM2 is a Production Runtime and Process Manager for Node.js applications with a built-in Load Balancer.
+        * `pm2 list`
 
 * React (App):
     * `/app/src/index.js` is the entry point and manage:
@@ -121,9 +123,11 @@
 
     For testing `Jest` and `enzyme` where used to do a simple espectation on the components existance within the `<App />` component.
 
-    ## Deployment
+    ## Deployment Production
 
-    The app was deployed into a Node server.
+    * Nginx nginx/1.10.3 (Ubuntu)
+    * Ubuntu 16.04.4 LTS
+    * Node.js v8.11.4.
 
     To build the app the ``REACT_APP_STAGE`` is set as `dev` and `production` according to the environments.
 
