@@ -1,0 +1,78 @@
+
+.hero {
+    position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+    .hero-container {
+        margin: 0 auto;
+		position: absolute;
+		max-width: 75%;
+		color: #fff;
+
+        .hero-copy {
+            text-align: justify;
+            font-size: 0.7em;
+        }
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    .hero {
+        .hero-container {
+            .hero-copy {
+                font-size: 0.9em;
+            }
+        }
+    }
+
+}
+
+@media only screen and (max-width: 768px) { 
+    .mobile {
+        width: 100%;
+        display: block;
+    }
+    .desktop {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .hero {
+        justify-content: flex-start;
+
+        .hero-container {
+            left: 5%;
+
+            .hero-copy {
+                font-size: 0.9em;
+            }
+        }
+    }
+
+	.mobile {
+        display: none;
+    }
+    .desktop {
+        width: 100%;
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 1140px) {
+    .hero {
+        justify-content: flex-start;
+
+        .hero-container {
+            left: 10%;
+            max-width: 55%;
+
+            .hero-copy {
+                font-size: 1em;
+            }
+        }
+    }
+
+}
