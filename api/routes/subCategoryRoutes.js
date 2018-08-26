@@ -6,4 +6,6 @@ let appRouter = express.Router();
 
 appRouter.route('/:tid').get(subCategoryController.getData);
 
+appRouter.route('/:tid/:sortby').get(subCategoryController.getSortedData);
+
 module.exports = appRouter;
