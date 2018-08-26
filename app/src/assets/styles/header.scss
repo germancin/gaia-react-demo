@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+.header-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .header-hamburguer-icon {
+        width:30px;
+    }
+
+    .avatar-name {
+        font-size: 0.9em;
+        color: #44576b;
+    }
+}
+
+.header-nav {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .search {
+        padding: 5px 5px;
+        margin-top: 4px;
+        border: 1px solid #dddddd;
+        background-color: #f5f5f5;
+    }
+}
+
+
+// For NavBar and hamburguer menu.
+@media only screen and (min-width: 885px) {
+    .header-hamburguer-icon {
+        display:none
+    }
+
+    .header-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #f5f5f5;
+        border-top: 2px solid #dddddd;
+
+        
+        .nav {
+            $color-link: #ff5510;
+
+            li {
+                cursor: pointer;
+                font-size: 0.9em;
+                padding: 12px 0 12px 0;
+                color: #44576b;
+
+                &:hover {
+                    color: $color-link;
+                    text-decoration: none;
+                }
+
+                &:active {
+                    color: $color-link;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+}

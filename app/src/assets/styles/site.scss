@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+
+.site{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.spinner-container {
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    align-items: center;
+    min-height: 500px;
+
+    .spinner-img {
+        width: 400px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .spinner-container {
+    
+        .spinner-img {
+            width: 600px;
+        }
+    }
+}
