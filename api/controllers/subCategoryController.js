@@ -61,12 +61,13 @@ const getSortedData = async (req, res) => {
 			}  
 		}
 
+        // Sending consumable data to the UI.
 		res.status(200).send({
-								term,
-								heroImg,
-								initialTiles,
-								moreTiles,
-							});
+            term,
+            heroImg,
+            initialTiles,
+            moreTiles,
+        });
 
 	} catch (error) {
 		res.status(500).send({error: "Something went wrong!", info: error});

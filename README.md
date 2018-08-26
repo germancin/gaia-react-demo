@@ -47,7 +47,7 @@ Go the `app` folder within `gaia-react-demo`
 
 		* These 2 end-points ping : [https://d6api.gaia.com/videos/term/119931](https://d6api.gaia.com/videos/term/119931)
     * The API was versioned following REST API good practices `/api/v1`.
-    * The API only accepts a `GET`  method and is specified in the headers section within the `server.js` file. [code](https://github.com/germancin/gaia-react-demo/blob/master/api/server.js)
+    * The API only accepts a `GET`  method and is specified in the headers section within the `server.js` file. [code](https://github.com/germancin/gaia-react-demo/blob/master/api/server.js#L29)
     * The routing name `(sub-categories)`  is intended to be clear and intuitive using REST naming conventions.
     * [Helmet](https://www.npmjs.com/package/helmet) module is installed to protect the API from some well-known web vulnerabilities by setting HTTP headers appropriately.
 
@@ -72,7 +72,8 @@ Go the `app` folder within `gaia-react-demo`
     * The amount of elements shown in the UI are set up with the variable `CHUNK_SIZE` found it on the `.env` file.
 
     * **Production server**: [Pm2](https://www.npmjs.com/package/pm2) is use to keep the application alive. PM2 is a Production Runtime and Process Manager for Node.js applications with a built-in Load Balancer.
-        * `pm2 list`
+        * You can ssh the production server and run > `pm2 list`
+        * You can find more commands [here](https://www.npmjs.com/package/pm2)
 
 * **React (App):**
     * `/app/src/index.js` is the entry point and manage:
@@ -83,12 +84,12 @@ Go the `app` folder within `gaia-react-demo`
     * The **\<App /\>** component:
         * Wrap Up all the components the UI needs to render.
         * Calls the `getData()` method which feeds the `store` with the needed data for the entire UI.
-        * The **Redux Store** contains `five main props` initial states:
+        * The **Redux Store** contains `six main props` initial states:
             * **fetching**: Shows the `<Spinner />` component while the UI waits untill data finish being requested from the API. 
 
             * **term**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has sub category title and description.
             * **heroImg**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the image consumed by the `<Hero />` component.
-            * **initialTiles**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the initial amount of tiles ready to consume by `<Content /> ` component which then is mapped and gets to the `<VideoTile /> ` component.
+            * **initialTiles**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the initial amount of tiles ready to consume by `<Content /> ` component which then is mapped and consumed by `<VideoTile /> ` component.
             * **moreTiles**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the rest of the Video Tiles items ready to be consumed by `<LoadMore />` component which re-uses the `<VideoTiles />` component to show them on the UI when users click on the `LOAD MORE` button.
             * **select**: Just keep track of the selected element from the Sort By dropdown and is used by `<Selectmenu />` component.
         
