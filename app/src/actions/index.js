@@ -29,3 +29,31 @@ export const getData = () => {
     };
 };
 
+export const getSortedData = (sortby) => {
+    const url = config.subcat_end_point + '/119931/' + sortby;
+
+    return async dispatch => {
+
+        dispatch({type: Types.FETCHING, payload: true});
+
+        try {
+            const response = await axios.get(`${url}`);
+            
+            dispatch({type: Types.GET_DATA, 
+                      term: response.data.term,
+                      heroImg: response.data.heroImg,
+                      initialTiles: response.data.initialTiles,
+                      moreTiles: response.data.moreTiles  
+                    });
+            
+            dispatch({type: Types.FETCHING, payload: false});
+
+        } catch (error) {
+            // TODO: handle error
+            console.log('the error:::', error);
+        }
+
+    };
+};
+
+export const setSelectValue = value => async dispatch => dispatch( {type: Types.SELECT, payload: value} );
