@@ -5,6 +5,7 @@ import Header from './components/header/Header';
 import Hero from './components/hero/Hero';
 import Spinner from './components/spinner/Spinner';
 import Content from './components/content/Content';
+import LoadMore from './components/content/LoadMore';
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/styles/site.css';
 
@@ -24,6 +25,7 @@ class App extends Component {
 					: <div>
 					    <Hero />
 						<Content />
+						<LoadMore />
 					  </div>
 				}	
 			</div>
