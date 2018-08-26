@@ -21,6 +21,10 @@ export const subCategories = (state = initialState, action) => {
             return {...state, 
                 fetching: action.payload,
             };
+        case 'SELECT':
+            return {...state, 
+                select: action.payload,
+            };
         default:
             return state;
     }

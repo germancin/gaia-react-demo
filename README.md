@@ -33,7 +33,7 @@ Go the `app` folder within `gaia-react-demo`
 	* `npm start` initiate the server listening on PORT `:3020`.
 	* The API has one route:
         * `api/v1/sub-categories`
-	* The route servers 2 end-points:
+	* The route serves 2 end-points:
         * `api/v1/sub-categories/:tid` Request all the videos.
         * `api/v1/sub-categories/:tid/:sortby` Request all the videos sorted by the criteria `[alphabetic, newest, popular]`.
 		* When a `HTTP` request is made, the router calls the right [end-point](https://github.com/germancin/gaia-react-demo/blob/master/api/routes/subCategoryRoutes.js) which call the right controller method. .
@@ -41,7 +41,7 @@ Go the `app` folder within `gaia-react-demo`
             * Code `200` Success.
             * Code `500` Error.
 
-        * Once the `api/v1/sub-categories/:tid` resolve the request, uses the `spliData()` method which map the response into a consumable object to be used for the React app. [code](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L36)
+        * Once the `api/v1/sub-categories/:tid` resolve the request, uses the `spliData()` method which map the response into a consumable object to be used for the React app. [code](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L87)
 
         * Once `api/v1/sub-categories/:tid/:sortby` resolve the request, uses the `getSortedData()` method which sort the data according to the `sortby` param then maps the response into a consumable object to be used for the React app. [code](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L34)
 
@@ -141,7 +141,7 @@ Go the `app` folder within `gaia-react-demo`
 
     The ``npm run build deploy:prod`` command from [package.json](https://github.com/germancin/gaia-react-demo/blob/master/app/package.json#L25) is executed for production build and it will get the production configurations from the [config.js](https://github.com/germancin/gaia-react-demo/blob/master/app/src/config.js) file. Also this will bundle the **scss files**.
 
-    All the configurations are placed in the [config.js](https://github.com/germancin/gaia-react-demo/blob/master/app/src/config.js) file.
+    All the configurations are placed in the [config.js](https://github.com/germancin/gaia-react-demo/blob/master/app/src/config.js) file. (For security reasons, this file shouldn't be pushed to the repo but handle it in a different way. In this case, was added here to simplify the testing process.) 
 
     ``npm run build`` command is used to build the app for development environment.
 

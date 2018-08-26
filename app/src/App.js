@@ -13,7 +13,7 @@ import './assets/styles/site.css';
 class App extends Component {
 
 	componentDidMount() {
-        this.props.getData();
+		this.props.getData();
 	}
 
 	render() {
@@ -24,7 +24,7 @@ class App extends Component {
 					(this.props.fetching)
 					? <Spinner />
 					: <div>
-					    <Hero />
+						<Hero />
 						<Selectmenu />
 						<Content />
 						<LoadMore />
