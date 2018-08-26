@@ -3,6 +3,7 @@ const express = require('express');
 const helmet = require('helmet');
 const http = require('http');
 const app = express();
+const subCategoryRoutes = require('./routes/subCategoryRoutes');
 
 const port = process.env.PORT;
 
@@ -29,6 +30,8 @@ app.use( (req, res, next) => {
     res.setHeader('Access-Control-Allow-Credentials', false); // Authorization is not required.
     next();
 });
+
+app.use('/api/v1/sub-categories', subCategoryRoutes);
 
 app.listen(port, () => {
     console.log(`Server listening on ${port}`);
