@@ -3,15 +3,6 @@
 ### How to start
 > git clone https://github.com/germancin/gaia-react-demo
 
-### Steps to run the React App
-> cd gaia-react-demo/app
-
-> npm install
-
-> npm start
-
-> navigate to localhost:3000
-
 ### Steps to run the REST API
 
 > cd gaia-react-demo/api
@@ -21,6 +12,20 @@
 > npm start
 
 > Server will start listening at PORT `:3020`
+
+Once you have the REST API runinig open another terminal instance and run the React App:
+
+### Steps to run the React App
+Go the `app` folder within `gaia-react-demo`
+> cd gaia-react-demo/app
+
+> npm install
+
+> npm start
+
+> navigate to localhost:3000
+
+
 
 ### Application Structure
 
