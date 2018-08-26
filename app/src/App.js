@@ -4,6 +4,7 @@ import { getData } from './actions/index';
 import Header from './components/header/Header';
 import Hero from './components/hero/Hero';
 import Spinner from './components/spinner/Spinner';
+import Content from './components/content/Content';
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/styles/site.css';
 
@@ -18,10 +19,11 @@ class App extends Component {
 			<div className="site">
 				<Header />
 				{
-					(this.props.fetching) 
+					(this.props.fetching)
 					? <Spinner />
 					: <div>
 					    <Hero />
+						<Content />
 					  </div>
 				}	
 			</div>
