@@ -24,7 +24,7 @@
 
 ### Application Structure
 
-* Server(API):
+* **Server(API):**
 	* `npm start` initiate the server listening on PORT `:3020`.
 	* The API has one route:
         * `api/v1/sub-categories`
@@ -69,7 +69,7 @@
     * **Production server**: [Pm2](https://www.npmjs.com/package/pm2) is use to keep the application alive. PM2 is a Production Runtime and Process Manager for Node.js applications with a built-in Load Balancer.
         * `pm2 list`
 
-* React (App):
+* **React (App):**
     * `/app/src/index.js` is the entry point and manage:
         * the setup of the redux store.
         * the initialization fo redux-thunk.
@@ -78,13 +78,13 @@
     * The **\<App /\>** component:
         * Wrap Up all the components the UI needs to render.
         * Calls the `getData()` method which feeds the `store` with the needed data for the entire UI.
-        * The **Redux Store** contains `five main props`:
-            * **fetching**: Runs the `<Spinner />` component when data is being requested from the API. 
+        * The **Redux Store** contains `five main props` initial states:
+            * **fetching**: Shows the `<Spinner />` component while the UI waits untill data finish being requested from the API. 
 
             * **term**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has sub category title and description.
             * **heroImg**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the image consumed by the `<Hero />` component.
-            * **initialTiles**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the initial amount of tiles ready to consume by `<Content /> ` component which then is map and passes to the `<VideoTile /> ` component. 
-            * **moreTiles**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the rest of the Video Tiles items ready to be consumed by `<LoadMore />` component which re-use the `<VideoTiles />` component to show them on the UI when users click on the `LOAD MORE` button.
+            * **initialTiles**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the initial amount of tiles ready to consume by `<Content /> ` component which then is mapped and gets to the `<VideoTile /> ` component.
+            * **moreTiles**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the rest of the Video Tiles items ready to be consumed by `<LoadMore />` component which re-uses the `<VideoTiles />` component to show them on the UI when users click on the `LOAD MORE` button.
             * **select**: Just keep track of the selected element from the Sort By dropdown and is used by `<Selectmenu />` component.
         
     *  The **Sort By** DropDown: Is controlled by `<Selecmenu />` component and calls the `getSortedData(criteria)` method, passing the sort criteria as param then pings the API and returns the same object structure than `getData()` which gets consumed nicely by `<Content /> <VideTiles />` and `<LoadMore />` component making them reusables throughout the app.
@@ -131,7 +131,9 @@
 
     To build the app the ``REACT_APP_STAGE`` is set as `dev` and `production` according to the environments.
 
-    The ``npm run build deploy:prod`` command from [package.json](https://github.com/germancin/gaia-react-demo/blob/master/app/package.json#L25) is executed for production build and it will get the production configurations from the [config.js](https://github.com/germancin/gaia-react-demo/blob/master/app/src/config.js) file. Also this will bundle the scss files. 
+    ``REACT_APP_STAGE`` is used within **package.json** in order to build the app in different environments, taking the correct configuration from the [config.js](https://github.com/germancin/gaia-react-demo/blob/master/app/src/config.js) file.
+
+    The ``npm run build deploy:prod`` command from [package.json](https://github.com/germancin/gaia-react-demo/blob/master/app/package.json#L25) is executed for production build and it will get the production configurations from the [config.js](https://github.com/germancin/gaia-react-demo/blob/master/app/src/config.js) file. Also this will bundle the **scss files**.
 
     All the configurations are placed in the [config.js](https://github.com/germancin/gaia-react-demo/blob/master/app/src/config.js) file.
 
