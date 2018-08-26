@@ -31,7 +31,7 @@
 	* The route servers 2 end-points:
         * `api/v1/sub-categories/:tid` Request all the videos.
         * `api/v1/sub-categories/:tid/:sortby` Request all the videos sorted by the criteria `[alphabetic, newest, popular]`.
-		* When a `HTTP` request is made, the router calls the right end-point which call the right controller. [code](http://).
+		* When a `HTTP` request is made, the router calls the right [end-point](https://github.com/germancin/gaia-react-demo/blob/master/api/routes/subCategoryRoutes.js) which call the right controller method. .
         * Both end-points response with 
             * Code `200` Success.
             * Code `500` Error.
@@ -79,10 +79,10 @@
         * The **Redux Store** contains `five main props`:
             * **fetching**: Runs the `<Spinner />` component when data is being requested from the API. 
 
-            * **term**: Comes from the API call - Has sub category title and description.
-            * **heroImg**: Comes from the API call - Has the image consumed by the `<Hero />` component.
-            * **initialTiles**: Comes from the API call - Has the initial amount of tiles ready to consume by `<Content /> ` component which then is map and passes to the `<VideoTile /> ` component. 
-            * **moreTiles**: Comes from the API call - Has the rest of the Video Tiles items ready to be consumed by `<LoadMore />` component which re-use the `<VideoTiles />` component to show them on the UI when users click on the `LOAD MORE` button.
+            * **term**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has sub category title and description.
+            * **heroImg**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the image consumed by the `<Hero />` component.
+            * **initialTiles**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the initial amount of tiles ready to consume by `<Content /> ` component which then is map and passes to the `<VideoTile /> ` component. 
+            * **moreTiles**: Comes from the [API call](https://github.com/germancin/gaia-react-demo/blob/master/api/controllers/subCategoryController.js#L11) - Has the rest of the Video Tiles items ready to be consumed by `<LoadMore />` component which re-use the `<VideoTiles />` component to show them on the UI when users click on the `LOAD MORE` button.
             * **select**: Just keep track of the selected element from the Sort By dropdown and is used by `<Selectmenu />` component.
         
     *  The **Sort By** DropDown: Is controlled by `<Selecmenu />` component and calls the `getSortedData(criteria)` method, passing the sort criteria as param then pings the API and returns the same object structure than `getData()` which gets consumed nicely by `<Content /> <VideTiles />` and `<LoadMore />` component making them reusables throughout the app.
@@ -97,7 +97,7 @@
 
     *****************************************************************
     
-    Sort By Developement environment:
+    Sort By Developement environmentl:
     * [http://localhost:3020/api/v1/sub-categories/119931/newest](http://142.93.115.215:3020/api/v1/sub-categories/119931/newest)
 
     * [http://localhost:3020/api/v1/sub-categories/119931/asc](http://142.93.115.215:3020/api/v1/sub-categories/119931/asc)
